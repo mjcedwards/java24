@@ -16,6 +16,17 @@ public class GUIExamples extends JFrame {
         JLabel pageLabel = new JLabel("Web page address:", JLabel.LEFT);
         JTextField pageAddress = new JTextField(20);
         JCheckBox jumboSize = new JCheckBox("Jumbo Size");
+        JComboBox profession = new JComboBox();
+        FreeSpacePanel space = new FreeSpacePanel();
+        
+        profession.addItem("Butcher");
+        profession.addItem("Baker");
+        profession.addItem("Fletcher");
+        profession.addItem("Candlestick Maker");
+        profession.addItem("Fighter");
+        profession.addItem("Technical Writer");
+        add(space);
+        add(profession);
         add(jumboSize);
         add(pageLabel);
         add(pageAddress);
@@ -25,6 +36,7 @@ public class GUIExamples extends JFrame {
         pack();
         setVisible(true);
     }
+
     private void setLookAndFeel() {
         try {
             UIManager.setLookAndFeel("apple.laf.AquaLookAndFeel");
