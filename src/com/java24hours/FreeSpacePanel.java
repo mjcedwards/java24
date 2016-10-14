@@ -21,11 +21,11 @@ public class FreeSpacePanel extends JPanel {
     private final void setValue() throws IOException {
         Path current = Paths.get("");
         FileStore store = Files.getFileStore(current);
-        long totalSpace = store.getTotalSpace();
-        long freeSpace = store.getUsableSpace();
+        long totalSpace = store.getTotalSpace()/1_000_000_000;
+        long freeSpace = store.getUsableSpace()/1_000_000_000;
         double percent = ((double)freeSpace / (double)totalSpace) * 100;
         percent = (int)(percent * 100) / (double)100;
-        space.setText(freeSpace + " free out of " + totalSpace + " (" + percent + "%)");
+        space.setText(freeSpace + "GB free out of " + totalSpace + "GB (" + percent + "%)");
         
         
     }
