@@ -47,6 +47,7 @@ public class PiePanel extends JPanel {
             Arc2D.Float drawSlice = new Arc2D.Float(xInset, yInset, width, 
                     height, start, extent, Arc2D.Float.PIE);
             start += extent;
+            comp2D.fill(drawSlice);
         }
     }
 }
